@@ -6,14 +6,26 @@ public class ManipulateObject : MonoBehaviour
 {
     [SerializeField] private Vector3 _targetPosition;
     [SerializeField] private Quaternion _targetRotation;
-
-
+    [SerializeField] private Vector3 _targetScale;
+    [SerializeField] private Color _targetColor = Color.white;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            UpdatePosition(new Vector3(1, 0, 0));
+            
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            
         }
     }
 
@@ -22,11 +34,11 @@ public class ManipulateObject : MonoBehaviour
         transform.position = transform.position + position;
     }
 
+    //OVERRIDING FUNCTION
     void UpdateRotation(Quaternion rotation)
     {
         transform.rotation = transform.rotation * rotation;
     }
-
     void UpdateRotation(Vector3 rotateVector)
     {
         transform.Rotate(rotateVector);
@@ -37,7 +49,7 @@ public class ManipulateObject : MonoBehaviour
         transform.localScale = transform.localScale + scale;
     }
 
-    void UpdateColor(Color newColor)
+    public void UpdateColor(Color newColor)
     {
         gameObject.GetComponent<Renderer>().material.color = newColor;
     }
